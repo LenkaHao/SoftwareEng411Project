@@ -23,10 +23,8 @@ app.get("/results", function(req, res){
         lang: "en",
         count: 11
     };
-    console.log(params);
     Twitter.get('search/tweets', params, function(err, data, response) {
         if (!err){
-            console.log(data);
             for (var i = 0; i < 10; i++){
                 tweets.push(data.statuses[i].text);
             }
