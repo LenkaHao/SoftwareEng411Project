@@ -10,8 +10,8 @@ var Strategy = require('passport-twitter').Strategy;
 var session = require('express-session');
 
 passport.use(new Strategy({
-    consumerKey: 'INSERTCONSUMERKEYHERE',
-    consumerSecret: 'INSERTCONSUMERSECRETHERE',
+    consumerKey: 'AXfDby',
+    consumerSecret: 'OM4VIf8rpZlp69AkLGDew7XnkG',
     callbackURL: 'http://localhost:3000/twitter/return'
 }, function(token, tokenSecret, profile, callback) {
     return callback(null, profile);
