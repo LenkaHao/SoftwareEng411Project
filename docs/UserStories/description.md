@@ -1,0 +1,3 @@
+* When using our application, a user will first create an account (“user create account”) and then log in with the account (“user log in”). 
+* A user needs to be logged in to use the application (“user create account” “user log in”). A user will feed the application with the hashtag he wants to know about (“user get report”). If applicable the application will return a sentiment analysis report. Otherwise the application will return an error message (“error message”), and the user may do another search (“user start new query”). 
+* A user may do several searches on different hashtags (“user start new query”).
