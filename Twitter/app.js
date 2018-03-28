@@ -8,10 +8,10 @@ var texts = [];
 app.use(bodyParser.urlencoded({extended: true}));
 
 var client = new Twitter({
-  consumer_key: 'TJivXZ42NGVlJHf849HevLUQo',
-  consumer_secret: 'PoDfeMTnRTFhnQQsSiYLP9FekwTKsxvZquXCDEGqLMT7OntE6T',
-  access_token_key: '3412426126-xHm8s2y8KjVtV3FTP9ngGQFc3cBKdTjh4vhU73H',
-  access_token_secret: 'Oa0n1bGsymxZpcyQudX5z7VwDyiLgbSv9IHZxhyGPhz33'
+  consumer_key: '...',
+  consumer_secret: '...',
+  access_token_key: '...',
+  access_token_secret: '...'
 });
 
 //define routes
