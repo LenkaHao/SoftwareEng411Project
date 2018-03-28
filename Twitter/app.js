@@ -1,9 +1,7 @@
 var express = require("express");
 var app = express();
 var request = require("request");
-//var twit = require("twit");
 var Twitter = require('twitter');
-var config = require("./config.js");
 var bodyParser = require("body-parser");
 var texts = [];
 
