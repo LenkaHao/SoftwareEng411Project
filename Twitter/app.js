@@ -14,6 +14,7 @@ var client = new Twitter({
   access_token_secret: 'Oa0n1bGsymxZpcyQudX5z7VwDyiLgbSv9IHZxhyGPhz33'
 });
 
+//define routes
 app.get("/", function(req, res){
     res.render("search.ejs");
 });
@@ -34,17 +35,6 @@ app.get("/results", function(req, res){
         }
         res.render("results.ejs", {texts: texts});
     });
-    
-    //Twitter.get('search/tweets', params, function(err, data, response) {
-        //var parsedData = JSON.parse(data);
-        //if (!err){
-            //for (var i = 0; i < 10; i++){
-                //console.log(parsedData);
-                //tweets.push(data.statuses[i].text);
-            //}
-            //res.render("results.ejs", {tweets: tweets});
-        //}
-    //});
 });
 
 
