@@ -3,9 +3,12 @@ var app = express();
 var request = require("request");
 var Twitter = require('twitter');
 var bodyParser = require("body-parser");
+var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 var texts = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/views'));
 
 var client = new Twitter({
   consumer_key: 'TJivXZ42NGVlJHf849HevLUQo',
@@ -13,8 +16,6 @@ var client = new Twitter({
   access_token_key: '3412426126-xHm8s2y8KjVtV3FTP9ngGQFc3cBKdTjh4vhU73H',
   access_token_secret: 'Oa0n1bGsymxZpcyQudX5z7VwDyiLgbSv9IHZxhyGPhz33'
 });
-
-var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
 var toneAnalyzer = new ToneAnalyzerV3({
     username: '76b58a34-d125-48f0-af28-ebd9a6299321',
@@ -24,9 +25,6 @@ var toneAnalyzer = new ToneAnalyzerV3({
 });
 
 
-
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/views'));
 
 //define routes
 // app.get("/", function(req, res){
@@ -48,11 +46,9 @@ app.get("/results", function(req, res){
     results = [];
 
     client.get('search/tweets', params, function(error, tweets, response) {
-        //console.log(tweets);
         for (var i = 0; i < 10; i++){
             texts = texts +  (tweets.statuses[i].text) + '\n'
         }
-
         //res.render("results.ejs", {texts: texts});
         toneAnalyzer.tone(
             {
@@ -63,12 +59,8 @@ app.get("/results", function(req, res){
                 if (err) {
                     console.log(err);
                 } else {
-                    //console.log(JSON.stringify(tone, null, 2));
-                    //console.log(tone);
-                    results = JSON.stringify(tone, null, 2);
-                    console.log(results)
-                    //res.render("results.ejs", {results: results});
-
+                    console.log(tone);
+                    res.render("results.ejs", {results: tone});
                 }
             }
         );
