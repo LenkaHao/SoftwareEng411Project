@@ -26,12 +26,9 @@ var toneAnalyzer = new ToneAnalyzerV3({
 
 
 
-//define routes
-// app.get("/", function(req, res){
-//     res.render("search.ejs");
-// });
-
-
+app.get("/", function(req, res){
+     res.render("index.html");
+});
 
 app.get("/results", function(req, res){
 
