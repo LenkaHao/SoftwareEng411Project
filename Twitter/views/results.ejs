@@ -1,9 +1,9 @@
-<h1>Top Ten Tweets Found</h1>
+<h1>Tone Analysis Result</h1>
 
 <ul>
-    <% for (var i = 0; i < 10; i++){ %>
-        <li>Tweet <%=  i+1 %></li>
-        <p>Content: <%= texts[i] %></p>
+    <% for (var counter = 0; counter < 5; counter++){ %>
+        <li>Tone: <%=  results["document_tone"]["tone_categories"][0]["tones"][counter]["tone_name"] %></li>
+        <p>Score: <%= results["document_tone"]["tone_categories"][0]["tones"][counter]["score"] %></p>
     <% } %>
 </ul>
 
