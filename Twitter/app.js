@@ -12,18 +12,12 @@ app.use(express.static(__dirname + '/views'));
 mongoose.connect("mongodb://localhost/tone_analysis");
 
 var client = new Twitter({
-  consumer_key: 'TJivXZ42NGVlJHf849HevLUQo',
-  consumer_secret: 'PoDfeMTnRTFhnQQsSiYLP9FekwTKsxvZquXCDEGqLMT7OntE6T',
-  access_token_key: '3412426126-xHm8s2y8KjVtV3FTP9ngGQFc3cBKdTjh4vhU73H',
-  access_token_secret: 'Oa0n1bGsymxZpcyQudX5z7VwDyiLgbSv9IHZxhyGPhz33'
+  //please see google doc
 });
 
 
 var toneAnalyzer = new ToneAnalyzerV3({
-    username: '76b58a34-d125-48f0-af28-ebd9a6299321',
-    password: 'mTnlcEIn3KLa',
-    version: '2016-05-19',
-    url: 'https://gateway.watsonplatform.net/tone-analyzer/api/'
+    //please see google doc
 });
 
 //hashtag-tone analysis result schema
