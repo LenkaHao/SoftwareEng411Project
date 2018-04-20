@@ -88,8 +88,50 @@ app.get("/results", function(req, res){
                     });
                 });
             } else {
-                //if the hashtag and the results are in the database, render to the result page
-                res.render("results.ejs", {toneResult: foundHashtag[0]});
+                //get the timestamp of the last update
+                var timestamp = foundHashtag[0].date;
+                var currentTime = new Date();
+                timestamp = new Date(timestamp.getFullYear(), timestamp.getMonth(), timestamp.getDate(), timestamp.getHours()+1);
+                currentTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), currentTime.getHours());
+                //compare to the current time
+                if (currentTime.getTime() > timestamp.getTime()){
+                    console.log("needs update");
+                    //update the database with new results
+                    client.get('search/tweets', params, function(error, tweets, response) {
+                        //get all tweets for tone analysis
+                        for (var i = 0; i < 10; i++){
+                            texts = texts +  (tweets.statuses[i].text) + '\n';
+                        }
+                        var toneQuery = {tone_input: texts, content_type:"text/plain", sentences: false};
+                        //call tone analyzer api
+                        toneAnalyzer.tone(toneQuery, function(err, results){
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                //save the tone analysis to database
+                                var updatedResults = {
+                                    hashtag: query,
+                                    anger_score: results["document_tone"]["tone_categories"][0]["tones"][0]["score"],
+                                    disgust_score: results["document_tone"]["tone_categories"][0]["tones"][1]["score"],
+                                    fear_score: results["document_tone"]["tone_categories"][0]["tones"][2]["score"],
+                                    joy_score: results["document_tone"]["tone_categories"][0]["tones"][3]["score"],
+                                    sadness_score: results["document_tone"]["tone_categories"][0]["tones"][4]["score"],
+                                    date: currentTime
+                                };
+                                Hashtag.findOneAndUpdate({hashtag: query}, updatedResults, function(err, updatedHashtag){
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        res.render("results.ejs", {toneResult: updatedHashtag});
+                                    }
+                                });
+                            }
+                        });
+                    });
+                } else {
+                    console.log("no need to update");
+                    res.render("results.ejs", {toneResult: foundHashtag[0]});
+                }
             }
         }
     });
