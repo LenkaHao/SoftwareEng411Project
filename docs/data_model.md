@@ -4,7 +4,7 @@ This application uses MongoDB.
   - It works as a cache for as well. When a user makes a request on a hashtag, if the results of that hashtag is in the cache and the lastest update is within an hour, the application displays the results in the cache. Otherwise, it makes API calls, saves the results and display them.
   - This is already implemented.
 
-```json
+```javascript
 //tweet analysis schema
 "hashtags":[
     {
