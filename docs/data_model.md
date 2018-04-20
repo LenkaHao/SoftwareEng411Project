@@ -13,12 +13,12 @@ This application uses MongoDB.
     	"hashtag": String,
         //tone analysis result
     	"anger_score": Number,
-		"disgust_score": Number,
-		"fear_score": Number,
-		"joy_score": Number,
-		"sadness_score": Number,
+	"disgust_score": Number,
+	"fear_score": Number,
+	"joy_score": Number,
+	"sadness_score": Number,
         //time of the latest update
-		"date": {type: Date, default: Date.now()},
+	"date": {type: Date, default: Date.now()},
         "__v": 0
     } 
 ]
