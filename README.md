@@ -5,6 +5,8 @@ This folder contains
 - Initial ideas
 - User cases
 - Technology stack
+- Data model
+- Sequence diagram
 
 
 ## /Twitter
