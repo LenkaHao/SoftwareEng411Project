@@ -23,8 +23,8 @@ app.set('view engine', 'html');
 
 //
 passport.use(new Strategy({
-    consumerKey: '97uBqrOA32',
-    consumerSecret: 'd5vkrV9b9zrRgBkoU',
+    consumerKey: '',
+    consumerSecret: '',
     callbackURL: 'http://localhost:3000/twitter/return'
 }, function(token, tokenSecret, profile, callback) {
     return callback(null, profile);
