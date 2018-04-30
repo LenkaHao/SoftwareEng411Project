@@ -12,7 +12,7 @@ This folder contains
 ## /Twitter
 This folder contains our application
 
-
+## /API Description
 Watson Part Description:
 IBM Watson offers two empathy analyzing services: “Personality Insights” and “Tone Analyzer”. The reason we choose the latter instead of the “Personality Insights” is that “Personality Insights” is more focused on personal characteristics and offers personalized recommendations and targeted messaging. But “Tone Analyzer” is more focused on the emotional analyzing, which is more suitable to our web application.
 
