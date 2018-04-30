@@ -8,4 +8,4 @@ This folder contains
 
 
 ## /Twitter
-This folder contains a prototype of Twitter API calls.
+This folder contains our application
