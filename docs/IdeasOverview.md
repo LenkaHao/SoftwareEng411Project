@@ -1,3 +1,4 @@
+
 Initial Idea
 
 We would like to pursue a tool that uses Twitter and IBM’s Watson (https://www.ibm.com/watson/developer/) to give the user quick access to statistics and opinions about trending events, movements, or people. Today there are a multitude of breaking news reports, policies, and other events that happen every single moment. Twitter is a great place for people to come together and collectively voice their opinions on subjects using hashtags as well as tagging certain individuals. We would like to combine this with Watson’s ability to analyze keyword data in order to give the user a quick summary and statistics by feeding Watson certain hashtags or twitter handles. This idea can also be extended to give the user a list of related people or hashtags they may be interested in. We believe that this would be a great way for people to keep up to date easily on things instead of reading through dozens of top trending tweets in order to get the bigger picture.
