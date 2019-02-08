@@ -1,0 +1,16 @@
+<h1>Tone Analysis Result</h1>
+
+<p>You searched #<%= toneResult.hashtag %></p>
+<ul>
+    <li>Anger: <%= toneResult.anger_score %></li>
+    <li>Disgust: <%= toneResult.disgust_score %></li>
+    <li>Fear: <%= toneResult.fear_score %></li>
+    <li>Joy: <%= toneResult.joy_score %></li>
+    <li>Sadness: <%= toneResult.sadness_score %></li>
+</ul>
+
+<a href="/">Looking for another keyword?</a>
+
+<a href="https://console.bluemix.net/docs/services/tone-analyzer/using-tone.html#using-the-general-purpose-endpoint">
+    See IBM Cloud Documentation for the definitions of the emotional tones
+</a>
