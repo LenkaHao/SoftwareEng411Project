@@ -1,4 +1,4 @@
-# CS411 Software Engineering Project
+# Twitter Tone Analyzer
 
 ## /docs
 This folder contains
